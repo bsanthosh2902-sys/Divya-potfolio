@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 60% 99.2%;
+    --foreground: 330 30% 10%;
+
+    --card: 0 100% 99.6%;
+    --card-foreground: 330 30% 10%;
+
+    --popover: 0 100% 99.6%;
+    --popover-foreground: 330 30% 10%;
+
+    --primary: 345 45% 77%;
+    --primary-foreground: 0 100% 99.6%;
+
+    --secondary: 340 60% 93%;
+    --secondary-foreground: 330 30% 10%;
+
+    --muted: 340 40% 95%;
+    --muted-foreground: 330 10% 40%;
+
+    --accent: 345 45% 77%;
+    --accent-foreground: 330 30% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 340 20% 88%;
+    --input: 340 20% 88%;
+    --ring: 345 45% 77%;
+
+    --radius: 0.25rem;
+
+    --sidebar-background: 0 60% 99.2%;
+    --sidebar-foreground: 330 30% 10%;
+    --sidebar-primary: 345 45% 77%;
+    --sidebar-primary-foreground: 0 100% 99.6%;
+    --sidebar-accent: 340 60% 93%;
+    --sidebar-accent-foreground: 330 30% 10%;
+    --sidebar-border: 340 20% 88%;
+    --sidebar-ring: 345 45% 77%;
+
+    --font-display: 'Syne', sans-serif;
+    --font-body: 'Inter', sans-serif;
+
+    --panel-highlight: 340 60% 95%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary) / 0.3);
+  border-radius: 2px;
+}
+
+/* Panel snap scrolling */
+.panel-container {
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.panel-snap {
+  scroll-snap-align: center;
+}
